@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Campus Voice | GEC Chamarajanagara</title>
+
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Tailwind Custom Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: "#eef2ff",
+                            100: "#e0e7ff",
+                            500: "#6366f1",
+                            600: "#4f46e5",
+                            800: "#3730a3",
+                            900: "#1e1b4b"
+                        },
+
+                        accent: "#f59e0b"
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+
+    <!-- ===================================== -->
+    <!-- HEADER -->
+    <!-- ===================================== -->
+
+    <header class="bg-brand-900 text-white shadow-md">
+
+        <div
+            class="max-w-6xl mx-auto px-4 py-4
+                   flex flex-col sm:flex-row
+                   sm:items-center
+                   sm:justify-between
+                   gap-4"
+        >
+
+            <div>
+
+                <h1
+                    id="appTitle"
+                    class="text-2xl font-bold"
+                >
+                    Campus Voice
+                </h1>
+
+                <p class="text-indigo-200 text-sm">
+                    GEC Chamarajanagara,
+                </p>
+
+                <p class="text-indigo-300 text-xs mt-1">
+                    Powered by Ahlya Technologies
+                </p>
+
+            </div>
+
+
+            <button
+                id="openModalBtn"
+                class="bg-accent text-brand-900
+                       font-bold
+                       px-4 py-2
+                       rounded-xl
+                       hover:bg-amber-400
+                       transition"
+            >
+                + Post Notice
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ===================================== -->
+    <!-- HERO / STATISTICS -->
+    <!-- ===================================== -->
+
+    <section class="bg-brand-800 text-white">
+
+        <div
+            class="max-w-6xl mx-auto
+                   px-4 py-8
+                   flex flex-col
+                   md:flex-row
+                   md:items-center
+                   md:justify-between
+                   gap-6"
+        >
+
+            <div>
+
+                <h2 class="text-3xl font-bold">
+                    What's happening on campus?
+                </h2>
+
+                <p class="text-indigo-200 mt-2">
+                    Search, explore and share important campus updates.
+                </p>
+
+            </div>
+
+
+            <!-- Metrics -->
+
+            <div class="flex gap-3">
+
+                <div
+                    class="bg-brand-900/60
+                           rounded-xl
+                           px-5 py-3
+                           text-center"
+                >
+
+                    <span
+                        id="totalCount"
+                        class="block
+                               text-2xl
+                               font-bold
+                               text-accent"
+                    >
+                        0
+                    </span>
+
+                    <span class="text-xs text-indigo-200">
+                        Total Notices
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="bg-brand-900/60
+                           rounded-xl
+                           px-5 py-3
+                           text-center"
+                >
+
+                    <span
+                        id="trendingCount"
+                        class="block
+                               text-2xl
+                               font-bold
+                               text-green-400"
+                    >
+                        0
+                    </span>
+
+                    <span class="text-xs text-indigo-200">
+                        Trending
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ===================================== -->
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+
+
+        <!-- SEARCH + SORT -->
+
+        <div
+            class="bg-white
+                   border
+                   rounded-2xl
+                   shadow-sm
+                   p-4
+                   mb-6"
+        >
+
+            <div
+                class="flex flex-col
+                       md:flex-row
+                       md:items-center
+                       md:justify-between
+                       gap-4"
+            >
+
+
+                <!-- Search -->
+
+                <div class="flex gap-2 w-full md:w-1/2">
+
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Search announcements..."
+                        class="w-full
+                               bg-slate-50
+                               border
+                               rounded-xl
+                               px-4 py-2
+                               focus:outline-none
+                               focus:ring-2
+                               focus:ring-brand-500"
+                    >
+
+
+                    <button
+                        id="clearSearchBtn"
+                        class="px-4 py-2
+                               border
+                               rounded-xl
+                               text-sm
+                               font-semibold
+                               hover:bg-slate-100"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <!-- Sort -->
+
+                <div class="flex items-center gap-2">
+
+                    <label
+                        for="sortSelect"
+                        class="text-sm font-semibold text-slate-500"
+                    >
+                        Sort:
+                    </label>
+
+
+                    <select
+                        id="sortSelect"
+                        class="border
+                               bg-slate-50
+                               rounded-xl
+                               px-3 py-2
+                               text-sm"
+                    >
+
+                        <option value="latest">
+                            Latest First
+                        </option>
+
+                        <option value="upvotes">
+                            Most Upvoted
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CATEGORY FILTERS -->
+
+            <div
+                id="filterContainer"
+                class="flex
+                       flex-wrap
+                       gap-2
+                       mt-4
+                       pt-4
+                       border-t"
+            >
+
+                <button
+                    class="filter-pill active-pill"
+                    data-category="All"
+                >
+                    All
+                </button>
+
+                <button
+                    class="filter-pill"
+                    data-category="Placements"
+                >
+                    Placements
+                </button>
+
+                <button
+                    class="filter-pill"
+                    data-category="Exams"
+                >
+                    Exams
+                </button>
+
+                <button
+                    class="filter-pill"
+                    data-category="Hackathons"
+                >
+                    Hackathons
+                </button>
+
+                <button
+                    class="filter-pill"
+                    data-category="Cultural"
+                >
+                    Cultural
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================== -->
+        <!-- DYNAMIC CARDS -->
+        <!-- JavaScript will create cards here -->
+        <!-- ===================================== -->
+
+        <div
+            id="cardsGrid"
+            class="grid
+                   grid-cols-1
+                   md:grid-cols-2
+                   lg:grid-cols-3
+                   gap-5"
+        >
+        </div>
+
+
+
+        <!-- ===================================== -->
+        <!-- EMPTY STATE -->
+        <!-- ===================================== -->
+
+        <div
+            id="emptyState"
+            class="hidden
+                   text-center
+                   bg-white
+                   border
+                   border-dashed
+                   rounded-2xl
+                   py-14
+                   mt-5"
+        >
+
+            <h3 class="text-xl font-bold text-slate-700">
+                No announcements found
+            </h3>
+
+            <p class="text-slate-500 mt-2">
+                Try another search or category.
+            </p>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ===================================== -->
+    <!-- POST NOTICE MODAL -->
+    <!-- ===================================== -->
+
+    <div
+        id="noticeModal"
+        class="fixed
+               inset-0
+               bg-slate-900/60
+               hidden
+               items-center
+               justify-center
+               p-4
+               z-50"
+    >
+
+        <div
+            class="bg-white
+                   max-w-lg
+                   w-full
+                   rounded-2xl
+                   shadow-2xl
+                   p-6"
+        >
+
+
+            <!-- Modal Header -->
+
+            <div
+                class="flex
+                       items-center
+                       justify-between
+                       mb-5"
+            >
+
+                <h2 class="text-xl font-bold">
+                    Post New Notice
+                </h2>
+
+
+                <button
+                    id="closeModalBtn"
+                    type="button"
+                    class="text-2xl text-slate-400 hover:text-slate-700"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- Form -->
+
+            <form
+                id="noticeForm"
+                class="space-y-4"
+            >
+
+
+                <!-- Title -->
+
+                <div>
+
+                    <label class="block text-sm font-semibold mb-1">
+                        Notice Title
+                    </label>
+
+                    <input
+                        id="noticeTitle"
+                        type="text"
+                        required
+                        placeholder="Enter notice title"
+                        class="form-control"
+                    >
+
+                </div>
+
+
+
+                <!-- Category -->
+
+                <div>
+
+                    <label class="block text-sm font-semibold mb-1">
+                        Category
+                    </label>
+
+                    <select
+                        id="noticeCategory"
+                        class="form-control"
+                    >
+
+                        <option value="Placements">
+                            Placements
+                        </option>
+
+                        <option value="Exams">
+                            Exams
+                        </option>
+
+                        <option value="Hackathons">
+                            Hackathons
+                        </option>
+
+                        <option value="Cultural">
+                            Cultural
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Author -->
+
+                <div>
+
+                    <label class="block text-sm font-semibold mb-1">
+                        Author / Department
+                    </label>
+
+                    <input
+                        id="noticeAuthor"
+                        type="text"
+                        required
+                        placeholder="Example: Placement Cell"
+                        class="form-control"
+                    >
+
+                </div>
+
+
+
+                <!-- Description -->
+
+                <div>
+
+                    <div
+                        class="flex
+                               justify-between
+                               items-center"
+                    >
+
+                        <label class="block text-sm font-semibold mb-1">
+                            Description
+                        </label>
+
+                        <span
+                            id="characterCount"
+                            class="text-xs text-slate-400"
+                        >
+                            0 / 250
+                        </span>
+
+                    </div>
+
+
+                    <textarea
+                        id="noticeDescription"
+                        rows="4"
+                        maxlength="250"
+                        required
+                        placeholder="Enter notice details..."
+                        class="form-control"
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- Buttons -->
+
+                <div
+                    class="flex
+                           justify-end
+                           gap-3
+                           pt-4
+                           border-t"
+                >
+
+                    <button
+                        id="cancelModalBtn"
+                        type="button"
+                        class="px-4 py-2
+                               rounded-xl
+                               text-slate-600
+                               hover:bg-slate-100"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="bg-brand-600
+                               text-white
+                               font-bold
+                               px-5 py-2
+                               rounded-xl
+                               hover:bg-brand-800"
+                    >
+                        Publish Notice
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- TOAST MESSAGE -->
+    <!-- ===================================== -->
+
+    <div
+        id="toast"
+        class="fixed
+               bottom-5
+               right-5
+               bg-brand-900
+               text-white
+               px-5 py-3
+               rounded-xl
+               shadow-xl
+               hidden
+               z-50"
+    >
+
+        <span id="toastMessage">
+            Action completed
+        </span>
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ===================================== -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

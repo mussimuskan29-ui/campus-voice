@@ -1,0 +1,367 @@
+/* =========================================
+   CAMPUS VOICE
+   Custom CSS used with Tailwind
+========================================= */
+
+
+/* Category Filter Button */
+
+.filter-pill {
+    padding: 0.45rem 0.9rem;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    border-radius: 9999px;
+
+    background-color: #f1f5f9;
+
+    color: #475569;
+
+    border: 1px solid #e2e8f0;
+
+    transition: 0.2s ease;
+}
+
+
+.filter-pill:hover {
+    background-color: #e2e8f0;
+
+    color: #1e293b;
+}
+
+
+
+/* Currently Selected Category */
+
+.active-pill {
+    background-color: #3730a3;
+
+    color: white;
+
+    border-color: #3730a3;
+
+    box-shadow:
+        0 4px 6px
+        rgba(55, 48, 163, 0.2);
+}
+
+
+
+/* Announcement Card */
+
+.notice-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.notice-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(15, 23, 42, 0.08);
+}
+
+
+
+/* Form Controls */
+
+.form-control {
+    width: 100%;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 0.75rem;
+
+    padding: 0.65rem 0.85rem;
+
+    font-size: 0.875rem;
+
+    outline: none;
+}
+
+
+.form-control:focus {
+    background-color: white;
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(99, 102, 241, 0.2);
+}
+
+
+
+/* Toast Animation */
+
+#toast {
+    animation: toastIn 0.25s ease;
+}
+
+
+@keyframes toastIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}/* =========================================
+   CAMPUS VOICE
+   Custom CSS used with Tailwind
+========================================= */
+
+
+/* Category Filter Button */
+
+.filter-pill {
+    padding: 0.45rem 0.9rem;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    border-radius: 9999px;
+
+    background-color: #f1f5f9;
+
+    color: #475569;
+
+    border: 1px solid #e2e8f0;
+
+    transition: 0.2s ease;
+}
+
+
+.filter-pill:hover {
+    background-color: #e2e8f0;
+
+    color: #1e293b;
+}
+
+
+
+/* Currently Selected Category */
+
+.active-pill {
+    background-color: #3730a3;
+
+    color: white;
+
+    border-color: #3730a3;
+
+    box-shadow:
+        0 4px 6px
+        rgba(55, 48, 163, 0.2);
+}
+
+
+
+/* Announcement Card */
+
+.notice-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.notice-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(15, 23, 42, 0.08);
+}
+
+
+
+/* Form Controls */
+
+.form-control {
+    width: 100%;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 0.75rem;
+
+    padding: 0.65rem 0.85rem;
+
+    font-size: 0.875rem;
+
+    outline: none;
+}
+
+
+.form-control:focus {
+    background-color: white;
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(99, 102, 241, 0.2);
+}
+
+
+
+/* Toast Animation */
+
+#toast {
+    animation: toastIn 0.25s ease;
+}
+
+
+@keyframes toastIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}/* =========================================
+   CAMPUS VOICE
+   Custom CSS used with Tailwind
+========================================= */
+
+
+/* Category Filter Button */
+
+.filter-pill {
+    padding: 0.45rem 0.9rem;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    border-radius: 9999px;
+
+    background-color: #f1f5f9;
+
+    color: #475569;
+
+    border: 1px solid #e2e8f0;
+
+    transition: 0.2s ease;
+}
+
+
+.filter-pill:hover {
+    background-color: #e2e8f0;
+
+    color: #1e293b;
+}
+
+
+
+/* Currently Selected Category */
+
+.active-pill {
+    background-color: #3730a3;
+
+    color: white;
+
+    border-color: #3730a3;
+
+    box-shadow:
+        0 4px 6px
+        rgba(55, 48, 163, 0.2);
+}
+
+
+
+/* Announcement Card */
+
+.notice-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.notice-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(15, 23, 42, 0.08);
+}
+
+
+
+/* Form Controls */
+
+.form-control {
+    width: 100%;
+
+    background-color: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 0.75rem;
+
+    padding: 0.65rem 0.85rem;
+
+    font-size: 0.875rem;
+
+    outline: none;
+}
+
+
+.form-control:focus {
+    background-color: white;
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(99, 102, 241, 0.2);
+}
+
+
+
+/* Toast Animation */
+
+#toast {
+    animation: toastIn 0.25s ease;
+}
+
+
+@keyframes toastIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
